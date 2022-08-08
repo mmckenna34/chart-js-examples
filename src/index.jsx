@@ -8,10 +8,10 @@ import PolarAreaChart from './PolarAreaChart.jsx';
 import LineChart from './LineChart.jsx';
 import RadarChart from './RadarChart.jsx';
 
+// Quickest way to deal with tree-shaking of Chart.js 3++
 import Chart from 'chart.js/auto';
 Chart.defaults.color = 'white';
 
-// Huzzah for jsx!
 const App = () => {
   const temperatureData = {
     'JAN': 24,
@@ -30,15 +30,10 @@ const App = () => {
   return (
   <div>
     <h2>Chart.js</h2>
-    <div>Bar Chart</div>
     <BarChart/>
-    <div>Doughnut Chart</div>
     <DoughnutChart/>
-    <div>Polar Area Chart</div>
     <PolarAreaChart temperatureData={temperatureData}/>
-    <div>Line Chart</div>
     <LineChart temperatureData={temperatureData}/>
-    <div>Radar Chart</div>
     <RadarChart />
   </div>
   )
